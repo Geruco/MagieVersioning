@@ -1,0 +1,49 @@
+.logo{
+    width: 55px;
+    height: 55px;
+}
+.header {
+    background-image: url(img/head.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 400px;
+    color: white;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.headerImg{
+    width: 200px;
+    height: 200px;
+}
+
+#title{
+    padding-left: 30px;
+}
+
+.accueil{
+    display: flex;
+    margin-left:20%;
+    margin-right: 20%;
+    margin-top:5%;
+}
+
+#footer{
+    margin-top:5%;
+}
+.footerIcone{
+    max-height: 50px;
+}
+
+
+
+/* Actualites */
+.divActu{
+    margin-right: 10%;
+    margin-left: 10%;
+    border-bottom: 2px solid black;
+}
+.titreActu{
+    margin-left: -5%;
+}

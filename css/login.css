@@ -1,0 +1,14 @@
+.logForm{
+    border: 2px solid black;
+    padding: 5px;
+/*
+    margin: auto;
+    width: 50%;
+*/
+}
+.loginDiv{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    min-height: 500px;
+}
