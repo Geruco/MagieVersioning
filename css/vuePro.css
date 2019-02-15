@@ -1,0 +1,15 @@
+#containMagicien{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.divMag{
+    border: 2px solid black;
+    margin: 2%;
+    max-width: 20%;
+    max-height: 300px;
+    display: inline-block;
+}
+.Apropos{
+    word-wrap: break-word;
+}

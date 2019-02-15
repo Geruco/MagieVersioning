@@ -1,14 +1,43 @@
+
+
+body{
+    background-color: #72c173;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+/*    min-height: 550px;*/
+}
+h1{
+    background-color: #72c173;
+    color: white;
+    text-align: center;
+}
 .logForm{
-    border: 2px solid black;
+    border-radius: 10px;
     padding: 5px;
+    border: 1px solid #72c173;
+    background-color: white;
+    min-height: 35%;
+    min-width: 500px;
 /*
     margin: auto;
     width: 50%;
 */
 }
+/*
 .loginDiv{
     display: flex;
     justify-content: center;
     align-items:center;
-    min-height: 500px;
+    min-height: 550px;
+}*/
+
+
+.put{
+    padding: 10px;
+    border: 1px solid #72c173;
+    border-radius: 10px;
+    font-size: 20px;
+    min-height: 5%;
+    min-width: 95%;
 }

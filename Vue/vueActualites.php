@@ -1,3 +1,9 @@
+<?php if(session_id() == "") session_start(); ?>
+<?php ob_start(); ?>
+
+<!--  Contenu en HTML de la page accueil -->
+<!--<link href="../css/demande.css" rel="stylesheet"/>-->
+<?php $header = ob_get_clean(); ?>
 <?php ob_start(); ?>
 
 <!--  Contenu en HTML de la page accueil -->
@@ -6,27 +12,48 @@ foreach ($actus as $actualite) { ?>
 <article class="divActu">
     <header class="titreActu">
         <h1 ><?php echo $actualite['titre']; ?></h1>
+        <?php 
+        if($actualite['ordre'] == 1){
+        ?>
+        <span><img class="fireImg" src="../css/img/carte.jpg" /></span>
+        <?php } ?>
         <time><?php echo $actualite['date']; ?></time>
+        
+        <?php 
+            if(isset($_SESSION['status'])){
+//                         session_start();
+                if($_SESSION['status'] == 2){
+                    // afficher un message ?>
+                    <a href="../Controleur/delActu.php?id=<?php echo $actualite['id'] ?>">Supprimer</a>
+        <?php
+                }
+            }
+            if(isset($_SESSION['status'])){
+//                         session_start();
+                if($_SESSION['status'] == 2){
+                    // afficher un message ?>
+                    <form action="../Controleur/ordreActu.php" method="post">
+                        <select name="prio">
+                            <option value="<?php echo $actualite['id'] ?>-0" <?php if($actualite['ordre'] == 0){ ?> selected <?php } ?> >Non-prioritaire</option>
+                            <option value="<?php echo $actualite['id'] ?>-1" <?php if($actualite['ordre'] == 1){ ?> selected <?php } ?> >Prioritaire</option>
+                        </select>
+                        <input type="submit" class="submitOrder" value="Confirmer le changement de priorité" />
+                    </form>
+        <?php
+                }
+            } ?>
+        
     </header>
     <div class="bodyActu">
-        <p><?php echo $actualite['contenu']; ?></p>
+        <?php if($actualite['image'] !== "0"){
+        ?>
+        <image id="image" class="actu_img" src="<?php echo $actualite['image'] ?>"> </image>
+        <?php } ?>
+        
+        <p><?php echo nl2br($actualite['contenu']); ?></p>
     </div>
 </article>
 <?php } ?>
 
-<footer id="footer">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#"></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-item nav-link" href="https://www.facebook.com/leodouillardmagie/" target="_blank"><img class="footerIcone" src="../css/img/iconeFB.png"></a>
-          <a class="nav-item nav-link"href="https://www.instagram.com/leo_douillard/" target="_blank"><img class="footerIcone" src="../css/img/iconeInsta.pg.png"></a>
-        </div>
-      </div>
-    </nav>
-</footer>
 <?php $contenu = ob_get_clean(); ?>
 <?php require 'template.php'; ?>

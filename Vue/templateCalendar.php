@@ -1,5 +1,4 @@
-<?php 
-//if(session_id() == "") session_start();  ?>
+<?php if(session_id() == "") session_start();  ?>
 <!doctype html>
 <html lang="fr">
     <head>
@@ -8,6 +7,7 @@
         <link href="../css/vuePro.css" rel="stylesheet"/>
 <!--        <link href="../css/login.css" rel="stylesheet"/>-->
         <link href="../css/main.css" rel="stylesheet"/>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
         
         <?php if(isset($header)){
             echo $header;
@@ -15,11 +15,12 @@
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/calendrier.js"></script>
         <title>LeoMagie.fr</title>
     </head>
     <body>
         <div id="global">
-            <header>
+            <header id="header">
                 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
                   <a class="navbar-brand" href="../index.php"><img src="../css/img/icone.png" class="logo"></a>
                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -134,10 +135,6 @@
                     </ul>
                   </div>
                 </nav>
-                <section class="header">
-                    <img src="../css/img/icone.png" class="headerImg">
-                    <h1 id="title">Magie</h1>
-                </section>
             </header>
             <section>
             <div id="contenu">

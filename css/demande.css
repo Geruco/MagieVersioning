@@ -1,0 +1,36 @@
+h2{
+    color: #2a6496;
+}
+.enAttente{
+    color: orange;
+}
+.confirmer{
+    color: green;
+}
+.refuser, .annuler{
+    color: red;
+}
+
+.liste{
+    padding-left: 0px;
+    list-style: none;
+}
+.strong{
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.confirmDiv a {
+    font-size: 20px;
+    margin-right: 20px;
+    padding: 5px;
+    border: 2px solid #66a3ff;
+    border-radius: 10px;
+}
+.confirmDiv a:hover{
+    border-color: #2a6496;
+}
+.confirmDiv {
+    padding-bottom: 20px;
+}
+
